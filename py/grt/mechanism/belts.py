@@ -1,8 +1,15 @@
-import wpilib
+from grt.mechanism.beltsmotor import BeltsMotor
 
-class Shooter:
+class Belts:
 
-    def __init__(self, flywheel_motor1, flywheel_motor2):
-        self.flywheel_motor1 = flywheel_motor1
-        self.flywheel_motor2 = flywheel_motor2
+    def __init__(self,belt_speed):
+        self.belt_speed = belt_speed
 
+    def forewards(self,belt_speed):
+        BeltsMotor.moveUp(belt_speed)
+
+    def backwards(self,belt_speed):
+        BeltsMotor.moverDown(belt_speed)
+
+    def stop(self, belt_speed):
+        BeltsMotor.stopBelt(belt_speed)
