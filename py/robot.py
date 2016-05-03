@@ -2,20 +2,25 @@ import wpilib
 
 
 class MyRobot(wpilib.SampleRobot):
-    def __init__(self):
-        #initialize variables
+
+    def robotInit(self):
+        print("initialize")
 
     def disabled(self):
-        #run when robot is disabled
+        while self.isDisabled():
+            print("disabled")
 
     def autonomous(self):
-        #run during autonomous period
+        while self.isAutonomous() and self.isEnabled():
+            print("autonomous")
 
     def operatorControl(self):
-        #run during tele-op period
+        while self.isOperatorControl() and self.isEnabled():
+            print("operator control")
+
 
     def safeSleep(self, tinit, duration):
-        #run when robot is sleeping
+        print("sleeping")
 
 
 if __name__ == "__main__":
