@@ -2,6 +2,7 @@ from wpilib import Solenoid, Compressor, DriverStation, CANTalon
 
 
 from grt.sensors.joystick import Attack3Joystick
+from grt.mechanism.drivecontroller import ArcadeDriveController
 from grt.sensors.xbox_joystick import XboxJoystick
 from grt.sensors.xbox_joystick import XboxJoystick
 from grt.sensors.joystick import Joystick
@@ -23,6 +24,7 @@ right_motor_back = CANTalon(4)
 dt = DriveTrain(left_motor_front, left_motor_back, right_motor_front, right_motor_back,left_shifter=None,
                 right_shifter=None, left_encoder=None, right_encoder=None)
 
+# initialize driver station
 ds = DriverStation.getInstance()
 
 # Motor Assignments
@@ -49,7 +51,8 @@ joystick = Attack3Joystick(0)
 xbox_controller = XboxJoystick(1)
 mimic_joystick = Attack3Joystick(3)
 
-
+ac = ArcadeDriveController(dt, joystick)
 mc = MechController(joystick, xbox_controller, pickup, shooter, belts, mimic_joystick)
+
 
 

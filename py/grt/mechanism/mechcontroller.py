@@ -10,7 +10,6 @@ class MechController:
         self.pickup = pickup
         self.shooter = shooter
 
-
     def _dummy_vision_listener(self, sensor, state_id, datum):
         if state_id == "x_button":
             if datum:
@@ -51,6 +50,8 @@ class MechController:
             if datum:
                 print("Hello World")
 
-    # def _driver_joystick_listener(self, sensor, state_id, datum):
+# def _driver_joystick_listener(self, sensor, state_id, datum):
+
+
 
 
