@@ -2,8 +2,8 @@
 
 class RollerMotor:
 
-    raise_speed = 0
-    roll_speed = 0
+    raise_speed = 1
+    roll_speed = 1
 
     def __init__(self, roller_motor, raiser_motor):
         self.roller_motor = roller_motor
